@@ -4,4 +4,4 @@
 ## Tools Used
 * Python 3.12.2
 * PyCharm 2023.3.4
-* VSCode 1.87.0
+* VSCode 1.87.1
