@@ -1,6 +1,6 @@
 import sys
 from pathlib import Path
-
+import os
 
 @staticmethod
 def get_python_version() -> str:
@@ -16,6 +16,7 @@ def write_text_file(filename: str) -> None:
 
 def read_text_file(filename: str) -> None:
     with open(filename, 'r') as f:
+        print(f'{Path(f.name)}')
         while True:
             line: str = f.readline()
             if len(line) == 0:
@@ -32,6 +33,9 @@ def read_text_file(filename: str) -> None:
 if __name__ == '__main__':
     print(f'Python version: {get_python_version()}')
     print(f'home path: {Path.home()}')
+    print(f'current working directory: {os.getcwd()}')
     filename: str = 'simple.txt'
-    write_text_file(filename)
-    read_text_file(filename)
+    full_path: str = f'{Path.home()}\\{filename}'
+    print(f'file will be written to {full_path}')
+    write_text_file(full_path)
+    read_text_file(full_path)
