@@ -7,12 +7,11 @@ def get_python_version() -> str:
     return f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}'
 
 
-# Press the green button in the gutter to run the script.
 def write_text_file(filename: str) -> None:
-    sentences = ['The quick brown fox','jumps over the', 'lazy dog.']
+    sentences = ['The quick brown fox', 'jumps over the', 'lazy dog.']
     with open(filename, 'w') as f:
         for line in sentences:
-            f.write(f'{line}\n' )
+            f.write(f'{line}\n')
 
 
 def read_text_file(filename: str) -> None:
@@ -30,10 +29,9 @@ def read_text_file(filename: str) -> None:
                 print(line, end='')
 
 
-
 if __name__ == '__main__':
     print(f'Python version: {get_python_version()}')
     print(f'home path: {Path.home()}')
-    write_text_file('simple.txt')
-    read_text_file('simple.txt')
-
+    filename: str = 'simple.txt'
+    write_text_file(filename)
+    read_text_file(filename)
